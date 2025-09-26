@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services</title>
+    <link rel="stylesheet" href="../css/Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 <body>
     <div class="floating-heart">💕</div>
@@ -26,35 +28,113 @@
             <li><a href="enquiry.html">Enquiry</a></li>
             <li><a href="contact.html">Contact Us</a></li>
         </ul> 
-    </nav> 
+    </nav>
+    <!--Add a hamburger navigation  for small devices-->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div> 
     </header>
     <!--Services Section-->
     <section id="services" class="section">
         <div class="container">
-            <h2 class="section-title">Our Services⚙️</h2>
             <div class="services-grid">
                 <div class="services-item">
-                    <span class="services-emoji">💻</span>
-                        <h3>Smart Home Robots</h3>
-                        <p>Adorable pink home assistants that clean,organize,make your life easier with style!💖🌸</p>
-                </div>
-                <div class="services-item">
-                    <span class="services-emoji">💻</span>
-                    <h3>Training Programs</h3>
-                    <p>Leran to build your own pink robots with with our copmrehensive courses.</p>
-                    <p>UX/UI design</p>
-                    <p>AI Generation and ect!</p>
-                </div>
-                <div class="services-item">
-                    <span class="services-emoji">💻</span>
-                    <h3>Gift Robots</h3>
-                    <p>Special occassion robots perfect for celebrations,anniversaries and others!🌸</p>
+                <div id="services" class="section">
+                <div class="container">
+                <h1 style="text-align: center; color: #ff1493; margin-bottom: 40px;">Our Services</h1>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>🎓 Tech Bootcamps</h3>
+                        <div class="price">R150</div>
+                        <ul style="line-height: 1.8;">
+                            <li>12-week intensive coding program</li>
+                            <li>Full-stack web development</li>
+                            <li>AI & Machine Learning basics</li>
+                            <li>Career placement support</li>
+                            <li>Lifetime community access</li>
+                        </ul>
+                        <button class="cta-button" onclick="showPage('enquiry')" style="width: 100%; margin-top: 20px;">Enroll Now</button>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>💼 Mentorship Program</h3>
+                        <div class="price">R150/month</div>
+                        <ul style="line-height: 1.8;">
+                            <li>1-on-1 mentorship sessions</li>
+                            <li>Industry expert guidance</li>
+                            <li>Career pathway planning</li>
+                            <li>Resume & interview prep</li>
+                            <li>Networking opportunities</li>
+                        </ul>
+                        <button class="cta-button" onclick="showPage('enquiry')" style="width: 100%; margin-top: 20px;">Get Mentor</button>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>🚀 Startup Incubator</h3>
+                        <div class="price">Equity-based</div>
+                        <ul style="line-height: 1.8;">
+                            <li>6-month incubation program</li>
+                            <li>R500 seed funding</li>
+                            <li>Expert mentorship</li>
+                            <li>Legal & business support</li>
+                            <li>Demo day presentation</li>
+                        </ul>
+                        <button class="cta-button" onclick="showPage('enquiry')" style="width: 100%; margin-top: 20px;">Apply Now</button>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>📱 Custom Development</h3>
+                        <div class="price">From R1000</div>
+                        <ul style="line-height: 1.8;">
+                            <li>Web & mobile app development</li>
+                            <li>AI-powered solutions</li>
+                            <li>Cloud infrastructure setup</li>
+                            <li>Ongoing maintenance</li>
+                            <li>Team augmentation</li>
+                        </ul>
+                        <button class="cta-button" onclick="showPage('enquiry')" style="width: 100%; margin-top: 20px;">Get Quote</button>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>📚 Online Courses</h3>
+                        <div class="price">R99 - R150</div>
+                        <ul style="line-height: 1.8;">
+                            <li>Self-paced learning</li>
+                            <li>Python, JavaScript, Data Science</li>
+                            <li>Cybersecurity fundamentals</li>
+                            <li>Project-based learning</li>
+                            <li>Certificate of completion</li>
+                        </ul>
+                        <button class="cta-button" onclick="showPage('enquiry')" style="width: 100%; margin-top: 20px;">Browse Courses</button>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>🌟 Corporate Training</h3>
+                        <div class="price">Custom pricing</div>
+                        <ul style="line-height: 1.8;">
+                            <li>On-site team training</li>
+                            <li>Diversity & inclusion workshops</li>
+                            <li>Leadership development</li>
+                            <li>Technical skills upgrade</li>
+                            <li>Ongoing support</li>
+                        </ul>
+                        <button class="cta-button" onclick="showPage('enquiry')" style="width: 100%; margin-top: 20px;">Book Training</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+
 </body>
 <footer>
+        <div class="socials">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://Twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://LinkedIn.com" target="_blank"><i class="fab fa-LinkedIn"></i></a>
+        </div>
     <p>&copy;2025 TECH-SISTERS.All rights reserved</p>
 </footer>
 </html>
