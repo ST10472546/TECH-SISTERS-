@@ -618,7 +618,7 @@ body {
 }
 /* Responsive Adjustment for a welcoming robot*/
 @media (max-width: 480px) {
-    .welcoming-robot {
+    .welcoming-robot { 
         width: 150px;
         transform: scale(0.8);
     }
