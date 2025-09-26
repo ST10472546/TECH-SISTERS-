@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enquiry</title>
+    <link rel="stylesheet" href="../css/Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 <body>
     <div class="floating-heart">💕</div>
@@ -27,18 +29,51 @@
         </ul> 
     </nav> 
     </header>
+    <!--Enquiry Sections-->
+     <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon">🤖</div>
+            <span class="logo-text">💕TECH-SISTERS🤖</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul> 
+    </nav>
+    <!--Added a hamburger navigation  for small devices-->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div> 
+    </header>
     <!--Enquiry Section-->
     <section id="enquiry" class="section">
         <div class="container">
-            <h2 class="section-title">Make an Enquiry👩‍💻</h2>
+            <h1 style="text-align: center; color: #ff1493; margin-bottom: 40px;">Make an Enquiry</h1>
+                <div class="form-container">
+                    <div class="success-message" id="enquirySuccess">
+                        Thank you for your enquiry! Our team will get back to you within 24 hours. 💖
+               </div>
             <div class="form-container">
                 <form id="enquiryForm">
                     <div class="form-group">
-                        <label for="name">Your Name</label>
+                        <label for="name">Full Name *</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="service">Service Interested In</label>
+                        <label for="enquiryEmail">Email Address *</label>
+                        <input type="email" id="enquiryEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="enquiryPhone">Phone Number *</label>
+                        <input type="tel" id="enquiryPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Interested In *</label>
                         <select id="service" name="service" required>
                             <option value="">Select a service..</option>
                             <option value="">Mobiloitte</option>
@@ -49,16 +84,32 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <label for="enquiryBudget">Budget Range *</label>
+                        <select id="enquiryBudget">
+                            <option value="">Select budget range...</option>
+                            <option value="under-500">Under R500</option>
+                            <option value="500-2000">R500 - R700</option>
+                            <option value="2000-5000">R700 - R800</option>
+                            <option value="5000-10000">R800 - R1000</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label class="message">Tell us about your dream robot</label>
                         <textarea id="message" name="message" rows="5" placeholder="Describe your vision of your perfect pink robot service"></textarea>
                     </div>
                     <button type="submit" class="btn">Send Enquiry🚀</button>
                 </form>
             </div>
-        </div>
+        </div>       
     </section>
 </body>
 <footer>
+        <div class="socials">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://Twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://LinkedIn.com" target="_blank"><i class="fab fa-LinkedIn"></i></a>
+        </div>
     <p>&copy;2025 TECH-SISTERS.All rights reserved</p>
 </footer>
 </html>
