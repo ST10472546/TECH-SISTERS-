@@ -103,7 +103,7 @@ v1.1.0 – Latest Update (2025-09-26)
 
     -Changed the enquiry page and added an apealing enquiry form
 
-    -changed the services page (added the budget)
+   . -changed the services page (added the budget)
 
     -changed the about page (added team members)
 
