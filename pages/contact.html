@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+    <link rel="stylesheet" href="../css/Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 <body>
     <div class="floating-heart">💕</div>
@@ -25,9 +27,16 @@
             <li><a href="enquiry.html">Enquiry</a></li>
             <li><a href="contact.html">Contact Us</a></li>
         </ul> 
-    </nav> 
+    </nav>
+    <!--Added a hamburger navigations  for small devices-->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div> 
     </header>
     <main>
+       <main>
         <!--Registration Form Section-->
         <h2>Registration form📝:</h2>
     <form action="" method="post">
@@ -72,45 +81,99 @@
                         <textarea rows="10" cols="15"></textarea>
                     </td>
                 </tr>
+                <tr>
+                    <td width="150"></td>
+                    <td><input type="submit" name="button" value="Submit"></td>
+                </tr>
             </tr>
         </table>
+
+
         <!--Contact Section-->
         <section id="contact" class="section">
             <div class="container">
-                <h2 class="section-tittle">Get in Touch📱</h2>
+                <h1 style="text-align: center; color: #ff1493; margin-bottom: 40px;">Contact TECH-SISTERS</h1>
                 <div class="contact-info">
                     <div class="contact-item">
-                        <span class="contact-icon">📞</span>
-                        <h3>Phone</h3>
-                        <p>(+27) 67330 1204</p>
-                        <p>Mon-Fri 9AM-6PM</p>
+                        <div class="contact-card">
+                        <h3>📧 Email</h3>
+                        <p><strong>General Inquiries:</strong><br>hello@tech-sisters.com</p>
+                        <p><strong>Partnerships:</strong><br>partners@tech-sisters.com</p>
+                        <p><strong>Support:</strong><br>support@tech-sisters.com</p>
                     </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">💌</span>
-                        <h3>Email</h3>
-                        <a href="TECH-SISTERS@gmail.com"></a>
-                        <p>We reply within 24 hours!</p>
+                    
+                    <div class="contact-card">
+                        <h3>📱 Phone</h3>
+                        <p><strong>Main Office:</strong><br>+1 (555) 123-0307</p>
+                        <p><strong>Student Support(Help):</strong><br>+1 (555) 456-2003</p>
+                        <p><strong>Business Hours:</strong><br>Mon-Fri: 9AM-6PM GMT+2</p>
                     </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📍</span>
-                        <h3>Location</h3>
-                        <p>0309 TECH-SISTERS</p>
-                        <p>18-12 Willow St,Flamewood Klerskdorp</p>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.832766228936!2d26.698311874364418!3d-26.84527089038725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e96f160765d60ef%3A0x3dcbca6ef96c6680!2sMatlosana%20Gardens!5e0!3m2!1sen!2sza!4v1756315430942!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                    <div class="contact-card">
+                        <h3>📍 Office</h3>
+                        <p><strong>Headquarters:</strong><br>
+                        18-12 Willow St,Flamewood<br>
+                        Klerskdorp 2571<br>
+                        North West</p>
                     </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📱</span>
-                        <h3>Social Media</h3>
-                        <p>@TECH-SISTERS</p>
+                    
+                    <div class="contact-card">
+                        <h3>🌐 Social Media</h3>
+                        <p><strong>LinkedIn:</strong> /company/tech-sisters</p>
+                        <p><strong>Twitter:</strong> @TechSistersHQ</p>
+                        <p><strong>Instagram:</strong> @tech.sisters</p>
+                        <p><strong>YouTube:</strong> TECH-SISTERS Channel</p>
                         <p>Follow us for daily robot cuteness!!🌸</p>
+                    </div>
+                </div>
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.832766228936!2d26.698311874364418!3d-26.84527089038725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e96f160765d60ef%3A0x3dcbca6ef96c6680!2sMatlosana%20Gardens!5e0!3m2!1sen!2sza!4v1756315430942!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
             </div>
         </section>
-        
+        <div style="margin-top: 60px;">
+                    <h2 style="text-align: center; color: #ff1493; margin-bottom: 30px;">Send us a Message</h2>
+                    <div class="form-container">
+                        <div class="success-message" id="contactSuccess">
+                            Message sent successfully! We'll respond within 24 hours. 💖
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactName">Your Name *</label>
+                            <input type="text" id="contactName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactEmail">Your Email *</label>
+                            <input type="email" id="contactEmail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactSubject">Subject *</label>
+                            <input type="text" id="contactSubject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMessage">Message *</label>
+                            <textarea id="contactMessage" rows="5" required placeholder="How can we help you?"></textarea>
+                        </div>
+                        
+                        <button class="cta-button" onclick="submitContact()" style="width: 100%; margin-top: 20px;">Send Message 💌</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 <footer>
+        <div class="socials">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://Twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://LinkedIn.com" target="_blank"><i class="fab fa-LinkedIn"></i></a>
+        </div>
     <p>&copy;2025 TECH-SISTERS.All rights reserved</p>
 </footer>
 </html>
