@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TECH-SISTERS</title>
+    <link rel="stylesheet" href="./css/Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 <body>
     <div class="floating-heart">💕</div>
@@ -25,8 +27,20 @@
             <li><a href="pages/enquiry.html">Enquiry</a></li>
             <li><a href="pages/contact.html">Contact Us</a></li>
         </ul> 
-    </nav> 
+    </nav>
+    <!--Added a hamburger navigation  for small devices-->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>  
     </header>
+    <!--Robot Assistant-->
+    <div class="robot-assistant" onclick="toggleRobotMessage()"></div>
+    <div class="robot-message" id="robotMessage">
+        <p>Hi there! I'm Rosie, your TECH-SISTERS assisatnt! Need help navigating or have questions? Just click on me!</p>
+    </div>
+
     <!--Main Concept-->
     <div class="main-concept">
         <!--Homepage-->
@@ -38,8 +52,8 @@
                     <p>Where Robotics Meets Female Excellence - Join the revolution of women shaping the future 
                         through technology!💕
                     </p>
-                    <a href="#" class="cta-button" data-page="about.html">Discover Our Mission</a>
-                    <a href="#" class="cta-button" data-page="services.html">Explore Our Services</a>
+                    <a href="" class="cta-button" data-page="about.html">Discover Our Mission</a>
+                    <a href="" class="cta-button" data-page="services.html">Explore Our Services</a>
                 </div>
             </div>
             <div>
@@ -86,27 +100,38 @@
                     <div class="feature-card">
                         <span class="featurer-icon"></span>
                         <h3>Tech Training</h3>
-                        <p>Comprehensive technology trtaining and hands-on workshop designed specifically
-                            for women to robotics and AI development
+                        <p>Comprehensive technology training and hands-on workshop designed specifically
+                            for women to robotics and AI development.
                         </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="featurer-icon"></div>
+                        <h3>Sisterhood Network</h3>
+                        <p>Connect with like-minded tech sisters, mentors and industy leaders in our supportive global community.</p>
                     </div>
                     <div class="feature-card">
                         <span class="featurer-icon"></span>
                         <h3>Bootcapms⚙️</h3>
                         <p>SheCodes: A coding bootcamp for women to build skills and confidence.</p>
-                        <p>Code First Girls: Provides a variety of coding courses for women.</p> 
+                        <p>Code First Girls: Provides a variety of coding courses for women.</p>
                     </div>
                     <div class="feature-card">
                         <span class="featurer-icon"></span>
                         <h3>Mentorship Programs</h3>
                         <p>Our Mentorship Program provide guidance,support and tranfer knowledge for career and personal development</p>
-                        <p>We aim to foster growth through knowledge sharing skill development, and network expansion</p>
+                        <p>We aim to foster growth through knowledge sharing skill development, and network expansion.</p>
                     </div>
                 </div>
         </div>
     </div>    
 </body>
 <footer>
+    <div class="socials">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://Twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://LinkedIn.com" target="_blank"><i class="fab fa-LinkedIn"></i></a>
+            </div>
     <p>&copy;2025 TECH-SISTERS.All rights reserved</p>
 </footer>
 </html>
