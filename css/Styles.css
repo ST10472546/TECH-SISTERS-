@@ -628,3 +628,10 @@ body {
         padding: 10px 15px;
     }
 }
+footer {
+     background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+     color: white;
+     text-align: center;
+     padding: 2rem;
+     margin-top: 3rem;
+}
