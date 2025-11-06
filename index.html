@@ -134,4 +134,268 @@
             </div>
     <p>&copy;2025 TECH-SISTERS.All rights reserved</p>
 </footer>
+    <script>
+        // Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // ============================================
+    // NAVIGATION & HAMBURGER MENU
+    // ============================================
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Close menu when clicking on a link
+    const navItems = document.querySelectorAll('.nav-links li a');
+    navItems.forEach(item => {
+        item.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        }
+    });
+
+    // ============================================
+    // ROBOT ASSISTANT
+    // ============================================
+    const robotAssistant = document.querySelector('.robot-assistant');
+    const robotMessage = document.getElementById('robotMessage');
+    let messageVisible = false;
+
+    window.toggleRobotMessage = function() {
+        messageVisible = !messageVisible;
+        if (messageVisible) {
+            robotMessage.classList.add('show');
+            robotAssistant.classList.add('active');
+        } else {
+            robotMessage.classList.remove('show');
+            robotAssistant.classList.remove('active');
+        }
+    };
+
+    // Auto-show robot message after 3 seconds on first visit
+    setTimeout(() => {
+        if (!messageVisible) {
+            toggleRobotMessage();
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                if (messageVisible) {
+                    toggleRobotMessage();
+                }
+            }, 5000);
+        }
+    }, 3000);
+
+    // ============================================
+    // FLOATING HEARTS ANIMATION
+    // ============================================
+    const floatingHearts = document.querySelectorAll('.floating-heart');
+    
+    floatingHearts.forEach((heart, index) => {
+        // Random initial position
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.animationDelay = (index * 2) + 's';
+        heart.style.animationDuration = (8 + Math.random() * 4) + 's';
+    });
+
+    // ============================================
+    // WELCOME ROBOT ANIMATION
+    // ============================================
+    const welcomeRobot = document.querySelector('.welcoming-robot');
+    const robotEyes = document.querySelectorAll('.eye');
+    
+    // Make robot eyes follow cursor
+    document.addEventListener('mousemove', function(e) {
+        if (welcomeRobot) {
+            const robotRect = welcomeRobot.getBoundingClientRect();
+            const robotCenterX = robotRect.left + robotRect.width / 2;
+            const robotCenterY = robotRect.top + robotRect.height / 4;
+            
+            robotEyes.forEach(eye => {
+                const angle = Math.atan2(e.clientY - robotCenterY, e.clientX - robotCenterX);
+                const distance = Math.min(3, Math.hypot(e.clientX - robotCenterX, e.clientY - robotCenterY) / 100);
+                
+                const eyeX = Math.cos(angle) * distance;
+                const eyeY = Math.sin(angle) * distance;
+                
+                eye.style.transform = `translate(${eyeX}px, ${eyeY}px)`;
+            });
+        }
+    });
+
+    // ============================================
+    // SMOOTH SCROLLING FOR ANCHOR LINKS
+    // ============================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // ============================================
+    // CTA BUTTONS NAVIGATION
+    // ============================================
+    const ctaButtons = document.querySelectorAll('.cta-button');
+    
+    ctaButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetPage = this.getAttribute('data-page');
+            if (targetPage) {
+                window.location.href = `pages/${targetPage}`;
+            }
+        });
+    });
+
+    // ============================================
+    // FEATURE CARDS ANIMATION ON SCROLL
+    // ============================================
+    const featureCards = document.querySelectorAll('.feature-card');
+    
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    featureCards.forEach(card => {
+        card.classList.add('fade-in');
+        observer.observe(card);
+    });
+
+    // ============================================
+    // ROBOT WAVING ANIMATION
+    // ============================================
+    const robotArms = document.querySelectorAll('.robot-arm');
+    
+    setInterval(() => {
+        robotArms.forEach(arm => {
+            arm.classList.add('wave');
+            setTimeout(() => {
+                arm.classList.remove('wave');
+            }, 1000);
+        });
+    }, 5000);
+
+    // ============================================
+    // HEART DISPLAY ANIMATION
+    // ============================================
+    const heartDisplay = document.querySelector('.heart-display');
+    const hearts = ['💕', '💖', '💗', '💓', '💝'];
+    let heartIndex = 0;
+
+    if (heartDisplay) {
+        setInterval(() => {
+            heartDisplay.textContent = hearts[heartIndex];
+            heartIndex = (heartIndex + 1) % hearts.length;
+        }, 2000);
+    }
+
+    // ============================================
+    // NAVBAR SCROLL EFFECT
+    // ============================================
+    const navbar = document.querySelector('.navbar');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
+        
+        // Add background to navbar on scroll
+        if (currentScroll > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+
+        // Hide/show navbar on scroll
+        if (currentScroll > lastScroll && currentScroll > 500) {
+            navbar.style.transform = 'translateY(-100%)';
+        } else {
+            navbar.style.transform = 'translateY(0)';
+        }
+        
+        lastScroll = currentScroll;
+    });
+
+    // ============================================
+    // WELCOME BUBBLE AUTO-HIDE
+    // ============================================
+    const welcomeBubble = document.querySelector('.welcome-bubble');
+    
+    if (welcomeBubble) {
+        setTimeout(() => {
+            welcomeBubble.classList.add('fade-out');
+        }, 8000);
+    }
+
+    // ============================================
+    // TYPING EFFECT FOR HERO TEXT
+    // ============================================
+    const heroHeading = document.querySelector('.hero-content h1');
+    
+    if (heroHeading) {
+        const text = heroHeading.textContent;
+        heroHeading.textContent = '';
+        let charIndex = 0;
+        
+        function typeText() {
+            if (charIndex < text.length) {
+                heroHeading.textContent += text.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, 100);
+            }
+        }
+        
+        setTimeout(typeText, 500);
+    }
+
+    // ============================================
+    // ADD SPARKLE EFFECT ON HOVER
+    // ============================================
+    featureCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+
+    // ============================================
+    // CONSOLE WELCOME MESSAGE
+    // ============================================
+    console.log('%c💕 Welcome to TECH-SISTERS! 🤖', 'color: #ff69b4; font-size: 24px; font-weight: bold;');
+    console.log('%cEmpowering Women in Technology! 🌸', 'color: #9d4edd; font-size: 16px;');
+
+});
+    </script>
 </html>
