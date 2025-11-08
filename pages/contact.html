@@ -176,4 +176,47 @@
         </div>
     <p>&copy;2025 TECH-SISTERS.All rights reserved</p>
 </footer>
+    <script>
+        function Main(){
+            //event.preventDefault();
+            var name = document.getElementById("name").value;
+                var surname = document.getElementById("surname").value;
+                var email = document.getElementById("email").value;
+                var campus = document.getElementById("campus").value;
+                var selectedCampus;
+                //Form validation
+                if (name === "") {
+                    //errorElement.innerText = "Name cannot be empty.";
+                    alert("Name cannot be empty.");
+                } else if (surname === "") {
+                    alert("Surname cannot be empty.");
+                } else if(email === "") {
+                    alert("Email cannot be empty.");
+                }else if(campus == "0"){
+                    selectedCampus = "No campus selected!!!";
+                } else {
+                    selectedCampus = document.getElementById("campus").options[document.getElementById("campus").selectedIndex].text;
+                    var fullname = name + " " + surname;
+                    alert(`Hello, ${fullname}! Your form is successfully submitted.`);
+                    document.getElementById("info").innerText = "Names: " + fullname + "\nEmail: " + email + "\nCampus: " + selectedCampus;
+                }
+                
+                // Prevent form submission
+                return false;
+            }
+
+            //DATE STAMP
+            function displayDate() {
+            const today = new Date();
+
+            const dateStr = today.toDateString(); // e.g., 'Fri Oct 11 2024'
+
+            document.getElementById("date").innerHTML = `Today's Date: ${dateStr}`;
+        }
+
+            displayDate();
+    </script>
+</body>
+</html>
+
 </html>
