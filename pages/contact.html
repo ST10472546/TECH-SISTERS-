@@ -228,6 +228,39 @@
                 });
             });
 
+            // Form Submission Handlers
+            window.submitRegistration = function() {
+                const name = document.getElementById('regName').value;
+                const email = document.getElementById('regEmail').value;
+                if (name && email) {
+                    document.getElementById('registrationSuccess').style.display = 'block';
+                    setTimeout(() => {
+                        document.getElementById('registrationSuccess').style.display = 'none';
+                    }, 5000);
+                } else {
+                    alert('Please fill in all required fields.');
+                }
+            };
+
+            window.submitContact = function() {
+                const name = document.getElementById('contactName').value;
+                const email = document.getElementById('contactEmail').value;
+                const subject = document.getElementById('contactSubject').value;
+                const message = document.getElementById('contactMessage').value;
+                if (name && email && subject && message) {
+                    document.getElementById('contactSuccess').style.display = 'block';
+                    setTimeout(() => {
+                        document.getElementById('contactSuccess').style.display = 'none';
+                    }, 5000);
+                } else {
+                    alert('Please fill in all required fields.');
+                }
+            };
+        });
+    </script>
+</body>
+</html>
+
                         
                         
                        
