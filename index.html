@@ -315,24 +315,21 @@
                 robotMessage.classList.remove('show');
             }
         });
-    // ============================================
-    // ROBOT ASSISTANT
-    // ============================================
-    const robotAssistant = document.querySelector('.robot-assistant');
-    const robotMessage = document.getElementById('robotMessage');
-    let messageVisible = false;
+    // Floating hearts animation delay
+        document.querySelectorAll('.floating-heart').forEach((heart, index) => {
+            heart.style.animationDelay = `${index * 2}s`;
+        });
 
-    window.toggleRobotMessage = function() {
-        messageVisible = !messageVisible;
-        if (messageVisible) {
-            robotMessage.classList.add('show');
-            robotAssistant.classList.add('active');
-        } else {
-            robotMessage.classList.remove('show');
-            robotAssistant.classList.remove('active');
-        }
-    };
-
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
     // Auto-show robot message after 3 seconds on first visit
     setTimeout(() => {
         if (!messageVisible) {
