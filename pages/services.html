@@ -146,14 +146,37 @@
                     if (heart.parentNode) heart.remove();
                 }, 20000);
             }
+
+                        // Initial hearts
+            for (let i = 0; i < 6; i++) {
+                setTimeout(createHeart, i * 800);
+            }
+            // Continuous hearts
+            setInterval(createHeart, 2500);
+
+            // 2. Mobile Hamburger Menu
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Close menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // 3. Navigation Helper Function
+            window.showPage = function(pageName) {
+                window.location.href = pageName + '.html';
+            };
+        });
+    </script>
 </body>
-<footer>
-        <div class="socials">
-                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://Twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://LinkedIn.com" target="_blank"><i class="fab fa-LinkedIn"></i></a>
-        </div>
-    <p>&copy;2025 TECH-SISTERS.All rights reserved</p>
-</footer>
 </html>
+
