@@ -87,8 +87,7 @@
             </div>
         </div>
 
-
-                <!-- Contact Info Section -->
+         <!-- Contact Info Section -->
         <section id="contact" class="section">
             <div class="container">
                 <h2 style="margin-top: 60px;">Contact TECH-SISTERS</h2>
@@ -145,23 +144,40 @@
                 Loading…
             </iframe>
         </div>
-                        
-                        
-                        
-                        <button class="cta-button" onclick="submitContact()" style="width: 100%; margin-top: 20px;">Send Message 💌</button>
-                    </div>
+
+            <!-- Message Form -->
+        <div style="margin-top: 60px;">
+            <h2>Send us a Message</h2>
+            <div class="form-container">
+                <div class="success-message" id="contactSuccess">
+                    Message sent successfully! We'll respond within 24 hours. 💖
                 </div>
+
+                <div class="form-group">
+                    <label for="contactName">Your Name *</label>
+                    <input type="text" id="contactName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactEmail">Your Email *</label>
+                    <input type="email" id="contactEmail" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactSubject">Subject *</label>
+                    <input type="text" id="contactSubject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactMessage">Message *</label>
+                    <textarea id="contactMessage" rows="5" required placeholder="How can we help you?"></textarea>
+                </div>
+
+                <button class="cta-button" onclick="submitContact()">Send Message 💌</button>
             </div>
         </div>
     </main>
-</body>
-<footer>
-        <div class="socials">
-                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://Twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://LinkedIn.com" target="_blank"><i class="fab fa-LinkedIn"></i></a>
-        </div>
-    <p>&copy;2025 TECH-SISTERS.All rights reserved</p>
-</footer>
-</html>
+
+                        
+                        
+                       
