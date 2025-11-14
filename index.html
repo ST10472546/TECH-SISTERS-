@@ -309,15 +309,12 @@
 
         robotAssistant.addEventListener('click', toggleRobotMessage);
 
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-        }
-    });
-
+        // Close robot message when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!robotAssistant.contains(e.target) && !robotMessage.contains(e.target)) {
+                robotMessage.classList.remove('show');
+            }
+        });
     // ============================================
     // ROBOT ASSISTANT
     // ============================================
