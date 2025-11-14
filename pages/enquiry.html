@@ -118,3 +118,35 @@
                     if (heart.parentNode) heart.remove();
                 }, 20000);
             }
+               // Initial hearts
+            for (let i = 0; i < 6; i++) {
+                setTimeout(createHeart, i * 800);
+            }
+            // Continuous hearts
+            setInterval(createHeart, 2500);
+
+            // 2. Mobile Hamburger Menu
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Close menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // 3. Navigation Helper Function
+            window.showPage = function(pageName) {
+                window.location.href = pageName + '.html';
+            };
+        });
+    </script>
+</body>
+</html>
