@@ -367,29 +367,33 @@
                 }
             });
         });
-    // WELCOME ROBOT ANIMATION
-    // ============================================
-    const welcomeRobot = document.querySelector('.welcoming-robot');
-    const robotEyes = document.querySelectorAll('.eye');
-    
-    // Make robot eyes follow cursor
-    document.addEventListener('mousemove', function(e) {
-        if (welcomeRobot) {
-            const robotRect = welcomeRobot.getBoundingClientRect();
-            const robotCenterX = robotRect.left + robotRect.width / 2;
-            const robotCenterY = robotRect.top + robotRect.height / 4;
-            
-            robotEyes.forEach(eye => {
-                const angle = Math.atan2(e.clientY - robotCenterY, e.clientX - robotCenterX);
-                const distance = Math.min(3, Math.hypot(e.clientX - robotCenterX, e.clientY - robotCenterY) / 100);
-                
-                const eyeX = Math.cos(angle) * distance;
-                const eyeY = Math.sin(angle) * distance;
-                
-                eye.style.transform = `translate(${eyeX}px, ${eyeY}px)`;
+            // Gallery Lightbox
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const closeLightbox = document.getElementById('closeLightbox');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.getAttribute('data-src');
+                lightboxImg.src = imgSrc;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
             });
-        }
-    });
+        });
+
+        closeLightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close lightbox when clicking outside image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
 
     // ============================================
     // SMOOTH SCROLLING FOR ANCHOR LINKS
