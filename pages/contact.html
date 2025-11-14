@@ -64,6 +64,29 @@
                     </select>
                 </div>
 
+                <div class="form-group">
+                    <label>Gender *</label>
+                    <div style="display: flex; gap: 15px; margin-top: 8px;">
+                        <label><input type="radio" name="gender" value="female" checked> Female</label>
+                        <label><input type="radio" name="gender" value="male"> Male</label>
+                        <label><input type="radio" name="gender" value="other"> Other</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="attachment">Attachment</label>
+                    <input type="file" id="attachment">
+                </div>
+
+                <div class="form-group">
+                    <label for="comments">Comments</label>
+                    <textarea id="comments" rows="5" placeholder="Tell us more..."></textarea>
+                </div>
+
+                <button class="cta-button" onclick="submitRegistration()">Submit Registration 💌</button>
+            </div>
+        </div>
+
 
         <!--Contact Section-->
         <section id="contact" class="section">
