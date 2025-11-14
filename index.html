@@ -30,29 +30,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 <body>
-    <!--Robot Assistant-->
-    <div class="robot-assistant" onclick="toggleRobotMessage()"></div>
-    <div class="robot-message" id="robotMessage">
-        <p>Hi there! I'm Rosie, your TECH-SISTERS assisatnt! Need help navigating or have questions? Just click on me!</p>
-    </div>
+<!-- Floating Hearts -->
+    <div class="floating-heart" style="top: 10%; left: 5%;">💕</div>
+    <div class="floating-heart" style="top: 20%; right: 10%;">💖</div>
+    <div class="floating-heart" style="bottom: 30%; left: 15%;">⚙️</div>
+    <div class="floating-heart" style="bottom: 20%; right: 20%;">🌸</div>
 
-    <!--Main Concept-->
-    <div class="main-concept">
-        <!--Homepage-->
-        <div class="page active" id="homepage">
-            <div class="hero">
-                <div class="hero-content">
-                    <h1>🌸TECH-SISTERS💕</h1>
-                    <P>Empowering Women in Technology Through Innovation And Sisterhood</P>
-                    <p>Where Robotics Meets Female Excellence - Join the revolution of women shaping the future 
-                        through technology!💕
-                    </p>
-                    <a href="" class="cta-button" data-page="about.html">Discover Our Mission</a>
-                    <a href="" class="cta-button" data-page="services.html">Explore Our Services</a>
-                </div>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <div class="logo-icon">🤖</div>
+                <span class="logo-text">💕TECH-SISTERS🤖</span>
             </div>
-            <div>
-                <div class="robot-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pages/about.html">About </a></li>
+                <li><a href="pages/services.html">Services</a></li>
+                <li><a href="pages/enquiry.html">Enquiry</a></li>
+                <li><a href="pages/gallery">Gallery</a></li>
+                <li><a href="pages/about.html">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search..." id="searchInput">
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
                     <div class="welcoming-robot">
                         <!--Welcome Message-->
                         <div class="welcome-bubble">🤖Welcome Sisters! Let The Journey Begins!💕</div>
