@@ -187,6 +187,30 @@
         </div>
         <p>&copy;2025 TECH-SISTERS. All rights reserved</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Floating Hearts
+            const hearts = ['💕', '💖', '🌸', '💜', '💗', '🤖'];
+            const container = document.getElementById('floating-hearts');
+
+            function createHeart() {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.left = `${Math.random() * 100}vw`;
+                heart.style.animationDuration = `${15 + Math.random() * 10}s`;
+                heart.style.animationDelay = `${Math.random() * 5}s`;
+                heart.style.fontSize = `${20 + Math.random() * 15}px`;
+                heart.style.color = Math.random() > 0.5 ? '#ff1493' : '#9c27b0';
+                container.appendChild(heart);
+
+                setTimeout(() => {
+                    if (heart.parentNode) heart.remove();
+                }, 20000);
+            }
+
+            for (let i = 0; i < 6; i++) setTimeout(createHeart, i * 800);
+            setInterval(createHeart, 2500);   
 
                         
                         
