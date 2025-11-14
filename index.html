@@ -443,43 +443,44 @@
             }
         });
 
-    // ============================================
-    // FEATURE CARDS ANIMATION ON SCROLL
-    // ============================================
-    const featureCards = document.querySelectorAll('.feature-card');
-    
-    const observerOptions = {
-        threshold: 0.2,
-        rootMargin: '0px 0px -50px 0px'
-    };
+     // Real-time updates simulation
+        const realTimeUpdates = document.getElementById('realTimeUpdates');
+        const updateMessages = [
+            "New workshop announced: Advanced Python for Data Science!",
+            "Congratulations to our latest graduate: Emma Rodriguez!",
+            "Tech-Sisters community just reached 10,000 members! 🎉",
+            "Join our live Q&A session with industry leaders this Friday!",
+            "New scholarship opportunities available for underrepresented groups!",
+            "Our AI bootcamp graduates achieved 100% job placement rate!"
+        ];
 
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    featureCards.forEach(card => {
-        card.classList.add('fade-in');
-        observer.observe(card);
-    });
-
-    // ============================================
-    // ROBOT WAVING ANIMATION
-    // ============================================
-    const robotArms = document.querySelectorAll('.robot-arm');
-    
-    setInterval(() => {
-        robotArms.forEach(arm => {
-            arm.classList.add('wave');
+        function addRealTimeUpdate() {
+            const randomMessage = updateMessages[Math.floor(Math.random() * updateMessages.length)];
+            const updateItem = document.createElement('div');
+            updateItem.className = 'update-item';
+            updateItem.textContent = randomMessage;
+            updateItem.style.opacity = '0';
+            updateItem.style.transform = 'translateX(-20px)';
+            
+            realTimeUpdates.insertBefore(updateItem, realTimeUpdates.firstChild);
+            
+            // Animate in
             setTimeout(() => {
-                arm.classList.remove('wave');
-            }, 1000);
-        });
-    }, 5000);
+                updateItem.style.opacity = '1';
+                updateItem.style.transform = 'translateX(0)';
+            }, 10);
+            
+            // Remove oldest item if more than 5
+            if (realTimeUpdates.children.length > 5) {
+                const oldest = realTimeUpdates.lastElementChild;
+                oldest.style.opacity = '0';
+                oldest.style.transform = 'translateX(-20px)';
+                setTimeout(() => {
+                    realTimeUpdates.removeChild(oldest);
+                }, 300);
+            }
+        }
+
 
     // ============================================
     // HEART DISPLAY ANIMATION
