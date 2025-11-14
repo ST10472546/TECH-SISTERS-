@@ -299,15 +299,16 @@
                 navLinks.classList.remove('active');
                 searchContainer.classList.remove('active');
             });
-        });
-    // Close menu when clicking on a link
-    const navItems = document.querySelectorAll('.nav-links li a');
-    navItems.forEach(item => {
-        item.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-        });
-    });
+       // Robot Assistant Toggle
+        const robotAssistant = document.querySelector('.robot-assistant');
+        const robotMessage = document.getElementById('robotMessage');
+
+        function toggleRobotMessage() {
+            robotMessage.classList.toggle('show');
+        }
+
+        robotAssistant.addEventListener('click', toggleRobotMessage);
+
 
     // Close menu when clicking outside
     document.addEventListener('click', function(e) {
