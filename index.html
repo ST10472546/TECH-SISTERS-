@@ -481,98 +481,14 @@
             }
         }
 
+        // Simulate real-time updates every 15 seconds
+        setInterval(addRealTimeUpdate, 15000);
 
-    // ============================================
-    // HEART DISPLAY ANIMATION
-    // ============================================
-    const heartDisplay = document.querySelector('.heart-display');
-    const hearts = ['💕', '💖', '💗', '💓', '💝'];
-    let heartIndex = 0;
-
-    if (heartDisplay) {
-        setInterval(() => {
-            heartDisplay.textContent = hearts[heartIndex];
-            heartIndex = (heartIndex + 1) % hearts.length;
-        }, 2000);
-    }
-
-    // ============================================
-    // NAVBAR SCROLL EFFECT
-    // ============================================
-    const navbar = document.querySelector('.navbar');
-    let lastScroll = 0;
-
-    window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset;
-        
-        // Add background to navbar on scroll
-        if (currentScroll > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-
-        // Hide/show navbar on scroll
-        if (currentScroll > lastScroll && currentScroll > 500) {
-            navbar.style.transform = 'translateY(-100%)';
-        } else {
-            navbar.style.transform = 'translateY(0)';
-        }
-        
-        lastScroll = currentScroll;
-    });
-
-    // ============================================
-    // WELCOME BUBBLE AUTO-HIDE
-    // ============================================
-    const welcomeBubble = document.querySelector('.welcome-bubble');
-    
-    if (welcomeBubble) {
-        setTimeout(() => {
-            welcomeBubble.classList.add('fade-out');
-        }, 8000);
-    }
-
-    // ============================================
-    // TYPING EFFECT FOR HERO TEXT
-    // ============================================
-    const heroHeading = document.querySelector('.hero-content h1');
-    
-    if (heroHeading) {
-        const text = heroHeading.textContent;
-        heroHeading.textContent = '';
-        let charIndex = 0;
-        
-        function typeText() {
-            if (charIndex < text.length) {
-                heroHeading.textContent += text.charAt(charIndex);
-                charIndex++;
-                setTimeout(typeText, 100);
-            }
-        }
-        
-        setTimeout(typeText, 500);
-    }
-
-    // ============================================
-    // ADD SPARKLE EFFECT ON HOVER
-    // ============================================
-    featureCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
+        // Initialize accordion chevron rotation
+        const chevrons = document.querySelectorAll('.accordion-header i');
+        chevrons.forEach(chevron => {
+            chevron.style.transition = 'transform 0.3s ease';
         });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
-
-    // ============================================
-    // CONSOLE WELCOME MESSAGE
-    // ============================================
-    console.log('%c💕 Welcome to TECH-SISTERS! 🤖', 'color: #ff69b4; font-size: 24px; font-weight: bold;');
-    console.log('%cEmpowering Women in Technology! 🌸', 'color: #9d4edd; font-size: 16px;');
-
-});
     </script>
+</body>
 </html>
