@@ -98,55 +98,60 @@
     </footer>
 
      <script>
-          document.addEventListener('DOMContentLoaded', () => {
-            // 1. Floating Hearts Animation
-            const hearts = ['💕', '💖', '🌸', '💜', '💗', '🤖'];
-            const container = document.getElementById('floating-hearts');
+         // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
 
-            function createHeart() {
-                const heart = document.createElement('div');
-                heart.className = 'floating-heart';
-                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
-                heart.style.left = `${Math.random() * 100}vw`;
-                heart.style.animationDuration = `${15 + Math.random() * 10}s`;
-                heart.style.animationDelay = `${Math.random() * 5}s`;
-                heart.style.fontSize = `${20 + Math.random() * 15}px`;
-                heart.style.color = Math.random() > 0.5 ? '#ff1493' : '#9c27b0';
-                container.appendChild(heart);
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
 
-                setTimeout(() => {
-                    if (heart.parentNode) heart.remove();
-                }, 20000);
-            }
-               // Initial hearts
-            for (let i = 0; i < 6; i++) {
-                setTimeout(createHeart, i * 800);
-            }
-            // Continuous hearts
-            setInterval(createHeart, 2500);
-
-            // 2. Mobile Hamburger Menu
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('navLinks');
-
-            hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('active');
-                navLinks.classList.toggle('active');
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
             });
+        });
 
-            // Close menu when clicking a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburger.classList.remove('active');
-                    navLinks.classList.remove('active');
-                });
-            });
+        // Form submission handling validation
+        const enquiryForm = document.getElementById('enquiryForm');
+        const enquirySuccess = document.getElementById('enquirySuccess');
 
-            // 3. Navigation Helper Function
-            window.showPage = function(pageName) {
-                window.location.href = pageName + '.html';
-            };
+        enquiryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('enquiryEmail').value.trim();
+            const phone = document.getElementById('enquiryPhone').value.trim();
+            const service = document.getElementById('service').value;
+            const budget = document.getElementById('enquiryBudget').value;
+            
+            if (!name || !email || !phone || !service || !budget) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Show success message
+            enquirySuccess.style.display = 'block';
+            enquiryForm.reset();
+            
+            // Scroll to success message
+            enquirySuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                enquirySuccess.style.display = 'none';
+            }, 5000);
+        });
+
+        // Floating hearts animation delay
+        document.querySelectorAll('.floating-heart').forEach((heart, index) => {
+            heart.style.animationDelay = `${index * 2}s`;
         });
     </script>
 </body>
 </html>
+
