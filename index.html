@@ -280,15 +280,18 @@
         <p>&copy;2025 TECH-SISTERS. All rights reserved</p>
     </footer>
     
-    <script>
-        // Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // ============================================
-    // NAVIGATION & HAMBURGER MENU
-    // ============================================
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+     <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const searchContainer = document.querySelector('.search-container');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            searchContainer.classList.toggle('active');
+        });
+
     
     if (hamburger) {
         hamburger.addEventListener('click', function() {
