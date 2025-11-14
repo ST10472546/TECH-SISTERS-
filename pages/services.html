@@ -125,7 +125,12 @@
         <p>&copy;2025 TECH-SISTERS. All rights reserved</p>
 </footer>
     
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Floating Hearts Animation
+            const hearts = ['💕', '💖', '🌸', '💜', '💗', '🤖'];
+            const container = document.getElementById('floating-hearts');
+
             function createHeart() {
                 const heart = document.createElement('div');
                 heart.className = 'floating-heart';
