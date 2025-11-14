@@ -292,14 +292,14 @@
             searchContainer.classList.toggle('active');
         });
 
-    
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
+            // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                searchContainer.classList.remove('active');
+            });
         });
-    }
-
     // Close menu when clicking on a link
     const navItems = document.querySelectorAll('.nav-links li a');
     navItems.forEach(item => {
