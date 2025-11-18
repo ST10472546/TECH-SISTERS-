@@ -283,6 +283,22 @@
     </footer>
     
      <script>
+         // Date and Time Stamp Implementation
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                timeZoneName: 'short'
+            };
+            const dateTimeString = now.toLocaleDateString('en-US', options);
+            document.getElementById('datestamp').textContent = `Current Date & Time: ${dateTimeString}`;
+        }
         // Mobile Navigation Toggle
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
